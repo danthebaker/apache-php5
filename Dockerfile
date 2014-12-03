@@ -1,6 +1,6 @@
 FROM ubuntu:12.04
 
-MAINTAINER Kai Davenport, kaiyadavenport@gmail.com
+MAINTAINER Dan Baker, dan@wk1.net
 
 # Set the locale
 RUN locale-gen en_US.UTF-8
@@ -14,7 +14,8 @@ ENV DEBIAN_FRONTEND noninteractive
 # Utilities and Apache, PHP
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get -y install curl apache2 php5 php5-cli libapache2-mod-php5 php5-json php5-mysql php-apc php5-gd php5-curl php5-memcached php5-mcrypt imagemagick
+RUN apt-get -y install curl apache2 php5 php-db php-html-template-it php-http php-mail php-net-smtp php-net-socket php-pear php-xml-parser php5-common php5-cli php5-cgi php5-curl php5-dev php5-ffmpeg php5-gd php5-mysql php5-sybase libapache2-mod-php5 libapache2-mod-php5 php5-json php5-mysql php-apc php5-gd php5-memcached php5-mcrypt imagemagick libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev zlib1g-dev liblcms1-dev libexif-dev libperl-dev ghostscript ffmpeg
+
 RUN apt-get clean
 
 # PHP prod config
